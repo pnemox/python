@@ -1,14 +1,12 @@
-# simple test class
+from django.db import models
 import uuid
 
 
-class Drone:
-
-    def __init__(self, name="Anonymous Drone", speed=0, elevation=0):
-        self.__droneID = uuid.uuid4()
-        self.name = name
-        self.speed = speed  # mph
-        self.elevation = elevation  # ft
+class Drone(models.Model):
+    __droneID = uuid.uuid4()
+    name = models.CharField(max_length=100)
+    speed = models.DecimalField(max_digits=7, decimal_places=2, default=0)  # mph
+    elevation = models.DecimalField(max_digits=7, decimal_places=2, default=0)  # ft
 
     def status(self):
         if self.elevation == 0 and self.speed == 0:

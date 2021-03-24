@@ -1,0 +1,15 @@
+{% extends "droneBase.html" %}
+
+{% block page_content %}
+    <h3>Drone Fleet Status</h3>
+    <span style="color: orange; font-weight: bold;">This page pulls in the data directly from sqlite</span><br/><br/>
+
+    Fleet Count:  {{ drones|length }} <br/><br/>
+    <div class="droneFleetList">
+    {% for drone in drones %}
+        <div class="drone">{{ drone.status }}</div>
+    {% endfor %}
+    </div>
+
+    <br/><br/>
+{% endblock %}
