@@ -23,3 +23,7 @@ class TestDrone:
         self.__droneObj.elevation = -10
         assert self.__droneObj.status() == 'Drone "Test 1" crashed'
 
+    def test_unique_id(self):
+        __droneObj2 = Drone(self.__droneName, self.__droneSpeed, self.__droneElevation)
+        assert self.__droneObj.getID() != __droneObj2.getID()
+

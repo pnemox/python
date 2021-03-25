@@ -1,7 +1,8 @@
 from lib.Drone import Drone
 
 
-# create drone object and report status
+# Create drone object and report status
+# -- Unit testing for the Drone class is located in the "test" folder
 def main():
     print("App Start")
     print("-" * 40)
